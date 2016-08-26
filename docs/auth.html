@@ -1,0 +1,227 @@
+use 'godoc cmd/TestProject/auth' for documentation on the TestProject/auth command 
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = ;
+	document.CALLGRAPH = ;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "TestProject/auth"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="#EncryptPass">func EncryptPass(password string) string</a></dd>
+			
+				
+				<dd><a href="#ReadUsers">func ReadUsers() (map[string]string, error)</a></dd>
+			
+				
+				<dd><a href="#UserToJson">func UserToJson(user *User) ([]byte, error)</a></dd>
+			
+			
+				
+				<dd><a href="#User">type User</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonToUser">func JsonToUser(jsonUserData []byte) (*User, error)</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/TestProject/auth/crypt.go">crypt.go</a>
+			
+				<a href="/src/TestProject/auth/user.go">user.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+		
+			
+			
+			<h2 id="EncryptPass">func <a href="/src/target/crypt.go?s=117:157#L1">EncryptPass</a>
+				<a class="permalink" href="#EncryptPass">&#xb6;</a>
+			</h2>
+			<pre>func EncryptPass(password <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#string">string</a></pre>
+			<p>
+Encrypts user&#39;s password before it is sent to server
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadUsers">func <a href="/src/target/user.go?s=308:351#L8">ReadUsers</a>
+				<a class="permalink" href="#ReadUsers">&#xb6;</a>
+			</h2>
+			<pre>func ReadUsers() (map[<a href="/pkg/builtin/#string">string</a>]<a href="/pkg/builtin/#string">string</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Reads the list of users allowed to connect to the In-memory cache
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="UserToJson">func <a href="/src/target/user.go?s=960:1003#L46">UserToJson</a>
+				<a class="permalink" href="#UserToJson">&#xb6;</a>
+			</h2>
+			<pre>func UserToJson(user *<a href="#User">User</a>) ([]<a href="/pkg/builtin/#byte">byte</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Converts User structure to Json string
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="User">type <a href="/src/target/user.go?s=166:238#L1">User</a>
+				<a class="permalink" href="#User">&#xb6;</a>
+			</h2>
+			<pre>type User struct {
+    Name      <a href="/pkg/builtin/#string">string</a>
+    Pass      <a href="/pkg/builtin/#string">string</a>
+    IsMachine <a href="/pkg/builtin/#bool">bool</a>
+}</pre>
+			<p>
+Defines a serializable structure that can be sent between client and server,
+or that can be stored.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="JsonToUser">func <a href="/src/target/user.go?s=744:795#L34">JsonToUser</a>
+					<a class="permalink" href="#JsonToUser">&#xb6;</a>
+				</h3>
+				<pre>func JsonToUser(jsonUserData []<a href="/pkg/builtin/#byte">byte</a>) (*<a href="#User">User</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Converts Json string to User structure
+</p>
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+

@@ -1,0 +1,1381 @@
+use 'godoc cmd/TestProject/cache' for documentation on the TestProject/cache command 
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = ;
+	document.CALLGRAPH = ;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "TestProject/cache"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="#pkg-constants">Constants</a></dd>
+			
+			
+				<dd><a href="#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="#WriteErrorResponse">func WriteErrorResponse(conn net.Conn, err error) error</a></dd>
+			
+				
+				<dd><a href="#WriteResponse">func WriteResponse(conn net.Conn, value interface{}, err error) error</a></dd>
+			
+			
+				
+				<dd><a href="#BaseCacheCommands">type BaseCacheCommands</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.AppendDictValue">func (this *BaseCacheCommands) AppendDictValue(params []string) (bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.AppendListValue">func (this *BaseCacheCommands) AppendListValue(params []string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.DeleteDictValue">func (this *BaseCacheCommands) DeleteDictValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.DeleteListValue">func (this *BaseCacheCommands) DeleteListValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.GetDictSize">func (this *BaseCacheCommands) GetDictSize(params []string) (int, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.GetDictValue">func (this *BaseCacheCommands) GetDictValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.GetKeys">func (this *BaseCacheCommands) GetKeys(params []string) ([]string, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.GetListSize">func (this *BaseCacheCommands) GetListSize(params []string) (int, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.GetListValue">func (this *BaseCacheCommands) GetListValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.GetSize">func (this *BaseCacheCommands) GetSize() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.GetValue">func (this *BaseCacheCommands) GetValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.RemoveValue">func (this *BaseCacheCommands) RemoveValue(params []string) (interface{}, bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.SetDictValue">func (this *BaseCacheCommands) SetDictValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.SetValue">func (this *BaseCacheCommands) SetValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.UpdateTTL">func (this *BaseCacheCommands) UpdateTTL(params []string) (bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCacheCommands.UpdateValue">func (this *BaseCacheCommands) UpdateValue(params []string) (bool, error)</a></dd>
+				
+			
+				
+				<dd><a href="#BaseRemoteCache">type BaseRemoteCache</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseRemoteCache.Get">func (this *BaseRemoteCache) Get(key string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseRemoteCache.Put">func (this *BaseRemoteCache) Put(key string, value interface{}) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseRemoteCache.PutExpirable">func (this *BaseRemoteCache) PutExpirable(key string, value interface{}, ttl int64) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseRemoteCache.Remove">func (this *BaseRemoteCache) Remove(key string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseRemoteCache.RemovePair">func (this *BaseRemoteCache) RemovePair(key string, value interface{}) (bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseRemoteCache.ReplaceValue">func (this *BaseRemoteCache) ReplaceValue(key string, oldValue, newValue interface{}) (bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseRemoteCache.ReplaceValueExpirable">func (this *BaseRemoteCache) ReplaceValueExpirable(key string, oldValue, newValue interface{}, ttl int64) (bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseRemoteCache.Size">func (this *BaseRemoteCache) Size() (int, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseRemoteCache.UpdateTTL">func (this *BaseRemoteCache) UpdateTTL(key string, ttl int64) (bool, error)</a></dd>
+				
+			
+				
+				<dd><a href="#Cache">type Cache</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewCache">func NewCache() Cache</a></dd>
+				
+				
+			
+				
+				<dd><a href="#CacheCommands">type CacheCommands</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#BaseCommands">func BaseCommands(cache Cache) CacheCommands</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewJsonCacheCommands">func NewJsonCacheCommands(cache Cache, conn net.Conn, log utils.Logger) CacheCommands</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewUserFriendlyCommands">func NewUserFriendlyCommands(cache Cache, logger utils.Logger) CacheCommands</a></dd>
+				
+				
+			
+				
+				<dd><a href="#JsonCacheCommands">type JsonCacheCommands</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.AppendDictValue">func (this *JsonCacheCommands) AppendDictValue(params []string) (bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.AppendListValue">func (this *JsonCacheCommands) AppendListValue(params []string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.DeleteDictValue">func (this *JsonCacheCommands) DeleteDictValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.DeleteListValue">func (this *JsonCacheCommands) DeleteListValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.GetDictSize">func (this *JsonCacheCommands) GetDictSize(params []string) (int, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.GetDictValue">func (this *JsonCacheCommands) GetDictValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.GetKeys">func (this *JsonCacheCommands) GetKeys(params []string) ([]string, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.GetListSize">func (this *JsonCacheCommands) GetListSize(params []string) (int, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.GetListValue">func (this *JsonCacheCommands) GetListValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.GetSize">func (this *JsonCacheCommands) GetSize() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.GetValue">func (this *JsonCacheCommands) GetValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.RemoveValue">func (this *JsonCacheCommands) RemoveValue(params []string) (interface{}, bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.SetDictValue">func (this *JsonCacheCommands) SetDictValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.SetValue">func (this *JsonCacheCommands) SetValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.UpdateTTL">func (this *JsonCacheCommands) UpdateTTL(params []string) (bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonCacheCommands.UpdateValue">func (this *JsonCacheCommands) UpdateValue(params []string) (bool, error)</a></dd>
+				
+			
+				
+				<dd><a href="#JsonResponse">type JsonResponse</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#JsonToResponse">func JsonToResponse(data []byte) (*JsonResponse, error)</a></dd>
+				
+				
+			
+				
+				<dd><a href="#RemoteCache">type RemoteCache</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewRemoteCache">func NewRemoteCache(conn net.Conn) RemoteCache</a></dd>
+				
+				
+			
+				
+				<dd><a href="#UserFriendlyCacheCommands">type UserFriendlyCacheCommands</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.AppendDictValue">func (this *UserFriendlyCacheCommands) AppendDictValue(params []string) (bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.AppendListValue">func (this *UserFriendlyCacheCommands) AppendListValue(params []string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.DeleteDictValue">func (this *UserFriendlyCacheCommands) DeleteDictValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.DeleteListValue">func (this *UserFriendlyCacheCommands) DeleteListValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.GetDictSize">func (this *UserFriendlyCacheCommands) GetDictSize(params []string) (int, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.GetDictValue">func (this *UserFriendlyCacheCommands) GetDictValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.GetKeys">func (this *UserFriendlyCacheCommands) GetKeys(params []string) ([]string, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.GetListSize">func (this *UserFriendlyCacheCommands) GetListSize(params []string) (int, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.GetListValue">func (this *UserFriendlyCacheCommands) GetListValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.GetSize">func (this *UserFriendlyCacheCommands) GetSize() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.GetValue">func (this *UserFriendlyCacheCommands) GetValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.RemoveValue">func (this *UserFriendlyCacheCommands) RemoveValue(params []string) (interface{}, bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.SetDictValue">func (this *UserFriendlyCacheCommands) SetDictValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.SetValue">func (this *UserFriendlyCacheCommands) SetValue(params []string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.UpdateTTL">func (this *UserFriendlyCacheCommands) UpdateTTL(params []string) (bool, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#UserFriendlyCacheCommands.UpdateValue">func (this *UserFriendlyCacheCommands) UpdateValue(params []string) (bool, error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/TestProject/cache/baseCommands.go">baseCommands.go</a>
+			
+				<a href="/src/TestProject/cache/cache.go">cache.go</a>
+			
+				<a href="/src/TestProject/cache/cacheCommands.go">cacheCommands.go</a>
+			
+				<a href="/src/TestProject/cache/jsonCommands.go">jsonCommands.go</a>
+			
+				<a href="/src/TestProject/cache/jsonResponse.go">jsonResponse.go</a>
+			
+				<a href="/src/TestProject/cache/remote.go">remote.go</a>
+			
+				<a href="/src/TestProject/cache/userCommands.go">userCommands.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				<pre>const (
+    <span id="TIMEOUT">TIMEOUT</span>     = 60000000000 <span class="comment">//1 minute</span>
+    <span id="DEFAULT_TTL">DEFAULT_TTL</span> = -1
+)</pre>
+				
+			
+				<pre>const (
+    <span id="MAX_LINE_NUMBER_FOR_COMMAND">MAX_LINE_NUMBER_FOR_COMMAND</span> = 20
+)</pre>
+				
+			
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<pre>var <span id="MAGIC_CMD">MAGIC_CMD</span> = []<a href="/pkg/builtin/#byte">byte</a>{0, 0, 0}</pre>
+				
+			
+		
+		
+			
+			
+			<h2 id="WriteErrorResponse">func <a href="/src/target/jsonResponse.go?s=273:328#L6">WriteErrorResponse</a>
+				<a class="permalink" href="#WriteErrorResponse">&#xb6;</a>
+			</h2>
+			<pre>func WriteErrorResponse(conn <a href="/pkg/net/">net</a>.<a href="/pkg/net/#Conn">Conn</a>, err <a href="/pkg/builtin/#error">error</a>) <a href="/pkg/builtin/#error">error</a></pre>
+			<p>
+Writes a JsonResponse serializable structure with passed error
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="WriteResponse">func <a href="/src/target/jsonResponse.go?s=452:521#L11">WriteResponse</a>
+				<a class="permalink" href="#WriteResponse">&#xb6;</a>
+			</h2>
+			<pre>func WriteResponse(conn <a href="/pkg/net/">net</a>.<a href="/pkg/net/#Conn">Conn</a>, value interface{}, err <a href="/pkg/builtin/#error">error</a>) <a href="/pkg/builtin/#error">error</a></pre>
+			<p>
+Writes a JsonResponse serializable structure with both passed value and error
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="BaseCacheCommands">type <a href="/src/target/baseCommands.go?s=151:193#L6">BaseCacheCommands</a>
+				<a class="permalink" href="#BaseCacheCommands">&#xb6;</a>
+			</h2>
+			<pre>type BaseCacheCommands struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="BaseCacheCommands.AppendDictValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=5920:5997#L267">AppendDictValue</a>
+					<a class="permalink" href="#BaseCacheCommands.AppendDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) AppendDictValue(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.AppendListValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=3083:3152#L141">AppendListValue</a>
+					<a class="permalink" href="#BaseCacheCommands.AppendListValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) AppendListValue(params []<a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.DeleteDictValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=6632:6716#L296">DeleteDictValue</a>
+					<a class="permalink" href="#BaseCacheCommands.DeleteDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) DeleteDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.DeleteListValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=3874:3958#L177">DeleteListValue</a>
+					<a class="permalink" href="#BaseCacheCommands.DeleteListValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) DeleteListValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.GetDictSize">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=7065:7137#L314">GetDictSize</a>
+					<a class="permalink" href="#BaseCacheCommands.GetDictSize">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) GetDictSize(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.GetDictValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=4898:4979#L225">GetDictValue</a>
+					<a class="permalink" href="#BaseCacheCommands.GetDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) GetDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.GetKeys">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=1128:1201#L49">GetKeys</a>
+					<a class="permalink" href="#BaseCacheCommands.GetKeys">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) GetKeys(params []<a href="/pkg/builtin/#string">string</a>) ([]<a href="/pkg/builtin/#string">string</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.GetListSize">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=4512:4584#L207">GetListSize</a>
+					<a class="permalink" href="#BaseCacheCommands.GetListSize">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) GetListSize(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.GetListValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=2533:2614#L113">GetListValue</a>
+					<a class="permalink" href="#BaseCacheCommands.GetListValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) GetListValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.GetSize">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=7825:7869#L345">GetSize</a>
+					<a class="permalink" href="#BaseCacheCommands.GetSize">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) GetSize() <a href="/pkg/builtin/#int">int</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.GetValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=1886:1963#L86">GetValue</a>
+					<a class="permalink" href="#BaseCacheCommands.GetValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) GetValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.RemoveValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=306:392#L16">RemoveValue</a>
+					<a class="permalink" href="#BaseCacheCommands.RemoveValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) RemoveValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.SetDictValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=5311:5392#L243">SetDictValue</a>
+					<a class="permalink" href="#BaseCacheCommands.SetDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) SetDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.SetValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=2078:2155#L94">SetValue</a>
+					<a class="permalink" href="#BaseCacheCommands.SetValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) SetValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.UpdateTTL">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=7469:7540#L332">UpdateTTL</a>
+					<a class="permalink" href="#BaseCacheCommands.UpdateTTL">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) UpdateTTL(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseCacheCommands.UpdateValue">func (*BaseCacheCommands) <a href="/src/target/baseCommands.go?s=685:758#L30">UpdateValue</a>
+					<a class="permalink" href="#BaseCacheCommands.UpdateValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseCacheCommands">BaseCacheCommands</a>) UpdateValue(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="BaseRemoteCache">type <a href="/src/target/remote.go?s=2758:2828#L54">BaseRemoteCache</a>
+				<a class="permalink" href="#BaseRemoteCache">&#xb6;</a>
+			</h2>
+			<pre>type BaseRemoteCache struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="BaseRemoteCache.Get">func (*BaseRemoteCache) <a href="/src/target/remote.go?s=2984:3049#L66">Get</a>
+					<a class="permalink" href="#BaseRemoteCache.Get">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseRemoteCache">BaseRemoteCache</a>) Get(key <a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseRemoteCache.Put">func (*BaseRemoteCache) <a href="/src/target/remote.go?s=3101:3185#L70">Put</a>
+					<a class="permalink" href="#BaseRemoteCache.Put">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseRemoteCache">BaseRemoteCache</a>) Put(key <a href="/pkg/builtin/#string">string</a>, value interface{}) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseRemoteCache.PutExpirable">func (*BaseRemoteCache) <a href="/src/target/remote.go?s=3244:3348#L74">PutExpirable</a>
+					<a class="permalink" href="#BaseRemoteCache.PutExpirable">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseRemoteCache">BaseRemoteCache</a>) PutExpirable(key <a href="/pkg/builtin/#string">string</a>, value interface{}, ttl <a href="/pkg/builtin/#int64">int64</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseRemoteCache.Remove">func (*BaseRemoteCache) <a href="/src/target/remote.go?s=3412:3480#L78">Remove</a>
+					<a class="permalink" href="#BaseRemoteCache.Remove">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseRemoteCache">BaseRemoteCache</a>) Remove(key <a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseRemoteCache.RemovePair">func (*BaseRemoteCache) <a href="/src/target/remote.go?s=3535:3619#L82">RemovePair</a>
+					<a class="permalink" href="#BaseRemoteCache.RemovePair">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseRemoteCache">BaseRemoteCache</a>) RemovePair(key <a href="/pkg/builtin/#string">string</a>, value interface{}) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseRemoteCache.ReplaceValue">func (*BaseRemoteCache) <a href="/src/target/remote.go?s=3850:3949#L95">ReplaceValue</a>
+					<a class="permalink" href="#BaseRemoteCache.ReplaceValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseRemoteCache">BaseRemoteCache</a>) ReplaceValue(key <a href="/pkg/builtin/#string">string</a>, oldValue, newValue interface{}) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseRemoteCache.ReplaceValueExpirable">func (*BaseRemoteCache) <a href="/src/target/remote.go?s=4193:4312#L108">ReplaceValueExpirable</a>
+					<a class="permalink" href="#BaseRemoteCache.ReplaceValueExpirable">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseRemoteCache">BaseRemoteCache</a>) ReplaceValueExpirable(key <a href="/pkg/builtin/#string">string</a>, oldValue, newValue interface{}, ttl <a href="/pkg/builtin/#int64">int64</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseRemoteCache.Size">func (*BaseRemoteCache) <a href="/src/target/remote.go?s=4862:4910#L134">Size</a>
+					<a class="permalink" href="#BaseRemoteCache.Size">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseRemoteCache">BaseRemoteCache</a>) Size() (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="BaseRemoteCache.UpdateTTL">func (*BaseRemoteCache) <a href="/src/target/remote.go?s=4561:4636#L121">UpdateTTL</a>
+					<a class="permalink" href="#BaseRemoteCache.UpdateTTL">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#BaseRemoteCache">BaseRemoteCache</a>) UpdateTTL(key <a href="/pkg/builtin/#string">string</a>, ttl <a href="/pkg/builtin/#int64">int64</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Cache">type <a href="/src/target/cache.go?s=102:1501#L1">Cache</a>
+				<a class="permalink" href="#Cache">&#xb6;</a>
+			</h2>
+			<pre>type Cache interface {
+    <a href="/pkg/TestProject/utils/">utils</a>.<a href="/pkg/TestProject/utils/#SyncMap">SyncMap</a>
+
+    <span class="comment">//Provides an ability to put a key-value pair with a specific time to live.</span>
+    <span class="comment">//Returns a value that was replaced during the putting a new key-value pair.</span>
+    PutExpirable(key <a href="/pkg/builtin/#string">string</a>, value interface{}, ttl <a href="/pkg/builtin/#int64">int64</a>) interface{}
+
+    <span class="comment">//Provides an ability to put a key-value pair with a specific time to live in case there is no value in a Cache yet.</span>
+    <span class="comment">//Returns &lt;nil&gt; if a key-value pair was put into a Cache, or a value of an existing key-value pair.</span>
+    PutExpirableIfAbsent(key <a href="/pkg/builtin/#string">string</a>, value interface{}, ttl <a href="/pkg/builtin/#int64">int64</a>) interface{}
+
+    <span class="comment">//Provides an ability to replace an existing key-value pair with a new value with a specific time to live.</span>
+    <span class="comment">//Returns &lt;nil&gt; in case a key-value pair was not put into a Cache, otherwise returns a value that was replaced</span>
+    ReplaceExpirable(key <a href="/pkg/builtin/#string">string</a>, value interface{}, ttl <a href="/pkg/builtin/#int64">int64</a>) interface{}
+
+    <span class="comment">//Provides an ability to replace an existing key-value pair with a new value with a specific time to live.</span>
+    <span class="comment">//Replacement happens in case an existig value is equal to a passed &lt;oldValue&gt;.</span>
+    <span class="comment">//Returns &lt;true&gt; if the replacement was successful, otherwise returns &lt;false&gt;.</span>
+    ReplaceValueExpirable(key <a href="/pkg/builtin/#string">string</a>, oldValue, newValue interface{}, ttl <a href="/pkg/builtin/#int64">int64</a>) <a href="/pkg/builtin/#bool">bool</a>
+
+    <span class="comment">//Provides an ability to update time to live for any key in a Cache.</span>
+    <span class="comment">//Returns &lt;true&gt; in case of replacement was successful, otherwise returns &lt;false&gt;.</span>
+    UpdateTTL(key <a href="/pkg/builtin/#string">string</a>, ttl <a href="/pkg/builtin/#int64">int64</a>) <a href="/pkg/builtin/#bool">bool</a>
+}</pre>
+			<p>
+Represents an interface for a Cache
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCache">func <a href="/src/target/cache.go?s=1668:1689#L36">NewCache</a>
+					<a class="permalink" href="#NewCache">&#xb6;</a>
+				</h3>
+				<pre>func NewCache() <a href="#Cache">Cache</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="CacheCommands">type <a href="/src/target/cacheCommands.go?s=106:3368#L1">CacheCommands</a>
+				<a class="permalink" href="#CacheCommands">&#xb6;</a>
+			</h2>
+			<pre>type CacheCommands interface {
+
+    <span class="comment">//Returns a value that can be found in a Cache by passed &lt;params&gt;.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    GetValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Sets a key-value pair into a Cache. Where a value is a string.</span>
+    <span class="comment">//Returns a value that was replaced, or &lt;nil&gt; there was no value for passed &lt;params&gt;.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    SetValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Updates an existing value in a Cache by passed &lt;params&gt;. A value is a string only.</span>
+    <span class="comment">//Returns &lt;true&gt; if updated was successful, otherwise return &lt;false&gt;.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    UpdateValue(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Removes a value from a Cache by passed &lt;params&gt;.</span>
+    <span class="comment">//Returns a removed value if any, otherwise &lt;nil&gt;.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    RemoveValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Returns a value from a stored list in a Cache.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    GetListValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Appends a value to a list stored in a Cache.</span>
+    <span class="comment">//Returns an error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    AppendListValue(params []<a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a>
+
+    <span class="comment">//Deletes a value from a stored list in a Cache.</span>
+    <span class="comment">//Returns a removed value.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    DeleteListValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Returns a size of stored list in a Cache.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    GetListSize(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Returns a value from a stored dictionary in a Cache.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    GetDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Sets a key-value pair into a dictionary stored in a Cache.</span>
+    <span class="comment">//Returns a value that was repalced if any, otherwise &lt;nil&gt;.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    SetDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Appends a new key-value pair into a dictionary stored in a Cache if doesn&#39;t exist.</span>
+    <span class="comment">//Returns &lt;true&gt; if a key-value pair was set up, otherwise returns &lt;false&gt;.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    AppendDictValue(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Deletes a key-value pair from a dictionary stored in a Cache.</span>
+    <span class="comment">//Returns a removed value if exists, otherwise &lt;nil&gt;.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    DeleteDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Returns size of a dictionary stored in a Cache, a number of its key-value pairs.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    GetDictSize(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Returns keys stored in a Cache.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    GetKeys(params []<a href="/pkg/builtin/#string">string</a>) ([]<a href="/pkg/builtin/#string">string</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Updates a time to live of any value stored in a Cache.</span>
+    <span class="comment">//Returns &lt;true&gt; if update was successful, otherwise returns &lt;false&gt;.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    UpdateTTL(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Returns size of a Cache, the count of its key-value pairs.</span>
+    <span class="comment">//Or error if something goes wrong, e.g. &lt;params&gt; are wrong.</span>
+    GetSize() <a href="/pkg/builtin/#int">int</a>
+}</pre>
+			<p>
+Represents a Telnet-kind interface for a Cache conection.
+Shows allowed functionality.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="BaseCommands">func <a href="/src/target/baseCommands.go?s=195:239#L10">BaseCommands</a>
+					<a class="permalink" href="#BaseCommands">&#xb6;</a>
+				</h3>
+				<pre>func BaseCommands(cache <a href="#Cache">Cache</a>) <a href="#CacheCommands">CacheCommands</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="NewJsonCacheCommands">func <a href="/src/target/jsonCommands.go?s=144:229#L5">NewJsonCacheCommands</a>
+					<a class="permalink" href="#NewJsonCacheCommands">&#xb6;</a>
+				</h3>
+				<pre>func NewJsonCacheCommands(cache <a href="#Cache">Cache</a>, conn <a href="/pkg/net/">net</a>.<a href="/pkg/net/#Conn">Conn</a>, log <a href="/pkg/TestProject/utils/">utils</a>.<a href="/pkg/TestProject/utils/#Logger">Logger</a>) <a href="#CacheCommands">CacheCommands</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="NewUserFriendlyCommands">func <a href="/src/target/userCommands.go?s=93:169#L1">NewUserFriendlyCommands</a>
+					<a class="permalink" href="#NewUserFriendlyCommands">&#xb6;</a>
+				</h3>
+				<pre>func NewUserFriendlyCommands(cache <a href="#Cache">Cache</a>, logger <a href="/pkg/TestProject/utils/">utils</a>.<a href="/pkg/TestProject/utils/#Logger">Logger</a>) <a href="#CacheCommands">CacheCommands</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="JsonCacheCommands">type <a href="/src/target/jsonCommands.go?s=56:142#L1">JsonCacheCommands</a>
+				<a class="permalink" href="#JsonCacheCommands">&#xb6;</a>
+			</h2>
+			<pre>type JsonCacheCommands struct {
+    <a href="#BaseCacheCommands">BaseCacheCommands</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="JsonCacheCommands.AppendDictValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=2324:2401#L77">AppendDictValue</a>
+					<a class="permalink" href="#JsonCacheCommands.AppendDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) AppendDictValue(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.AppendListValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=1371:1440#L47">AppendListValue</a>
+					<a class="permalink" href="#JsonCacheCommands.AppendListValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) AppendListValue(params []<a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.DeleteDictValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=2529:2613#L83">DeleteDictValue</a>
+					<a class="permalink" href="#JsonCacheCommands.DeleteDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) DeleteDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.DeleteListValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=1543:1627#L53">DeleteListValue</a>
+					<a class="permalink" href="#JsonCacheCommands.DeleteListValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) DeleteListValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.GetDictSize">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=2732:2804#L89">GetDictSize</a>
+					<a class="permalink" href="#JsonCacheCommands.GetDictSize">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) GetDictSize(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.GetDictValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=1930:2011#L65">GetDictValue</a>
+					<a class="permalink" href="#JsonCacheCommands.GetDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) GetDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.GetKeys">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=2916:2989#L95">GetKeys</a>
+					<a class="permalink" href="#JsonCacheCommands.GetKeys">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) GetKeys(params []<a href="/pkg/builtin/#string">string</a>) ([]<a href="/pkg/builtin/#string">string</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.GetListSize">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=1746:1818#L59">GetListSize</a>
+					<a class="permalink" href="#JsonCacheCommands.GetListSize">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) GetListSize(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.GetListValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=1174:1255#L41">GetListValue</a>
+					<a class="permalink" href="#JsonCacheCommands.GetListValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) GetListValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.GetSize">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=3287:3331#L107">GetSize</a>
+					<a class="permalink" href="#JsonCacheCommands.GetSize">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) GetSize() <a href="/pkg/builtin/#int">int</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.GetValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=330:407#L13">GetValue</a>
+					<a class="permalink" href="#JsonCacheCommands.GetValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) GetValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.RemoveValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=896:982#L31">RemoveValue</a>
+					<a class="permalink" href="#JsonCacheCommands.RemoveValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) RemoveValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.SetDictValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=2127:2208#L71">SetDictValue</a>
+					<a class="permalink" href="#JsonCacheCommands.SetDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) SetDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.SetValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=519:596#L19">SetValue</a>
+					<a class="permalink" href="#JsonCacheCommands.SetValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) SetValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.UpdateTTL">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=3097:3168#L101">UpdateTTL</a>
+					<a class="permalink" href="#JsonCacheCommands.UpdateTTL">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) UpdateTTL(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="JsonCacheCommands.UpdateValue">func (*JsonCacheCommands) <a href="/src/target/jsonCommands.go?s=708:781#L25">UpdateValue</a>
+					<a class="permalink" href="#JsonCacheCommands.UpdateValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#JsonCacheCommands">JsonCacheCommands</a>) UpdateValue(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="JsonResponse">type <a href="/src/target/jsonResponse.go?s=145:206#L1">JsonResponse</a>
+				<a class="permalink" href="#JsonResponse">&#xb6;</a>
+			</h2>
+			<pre>type JsonResponse struct {
+    Value interface{}
+    Err   <a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+Serializable response that is used to communicate between client and server
+for Cache API
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="JsonToResponse">func <a href="/src/target/jsonResponse.go?s=1221:1276#L45">JsonToResponse</a>
+					<a class="permalink" href="#JsonToResponse">&#xb6;</a>
+				</h3>
+				<pre>func JsonToResponse(data []<a href="/pkg/builtin/#byte">byte</a>) (*<a href="#JsonResponse">JsonResponse</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Converts Json string to JsonResponse structure
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="RemoteCache">type <a href="/src/target/remote.go?s=233:2756#L7">RemoteCache</a>
+				<a class="permalink" href="#RemoteCache">&#xb6;</a>
+			</h2>
+			<pre>type RemoteCache interface {
+
+    <span class="comment">//Returns a value for a passed &lt;key&gt; that remove Cache contains, or &lt;nil&gt; in case there is no such &lt;key&gt; in a Cache.</span>
+    <span class="comment">//Can return error, e.g. when a remove Cache is unavailable.</span>
+    Get(key <a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Puts a key-value pair into a remote Cache.</span>
+    <span class="comment">//Returns a replaced value from a Cache, or &lt;nil&gt; if Cache doesn&#39;t contain any value for passed &lt;key&gt;.</span>
+    <span class="comment">//Can return error, e.g. when a remove Cache is unavailable.</span>
+    Put(key <a href="/pkg/builtin/#string">string</a>, value interface{}) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Provides an ability to put a key-value pair into a remote Cache with a specific time to live.</span>
+    <span class="comment">//Returns a replaced value from a Cache, or &lt;nil&gt; if Cache doesn&#39;t contain any value for passed &lt;key&gt;.</span>
+    <span class="comment">//Can return error, e.g. when a remove Cache is unavailable.</span>
+    PutExpirable(key <a href="/pkg/builtin/#string">string</a>, value interface{}, ttl <a href="/pkg/builtin/#int64">int64</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Removes a key-value pair from a remote Cache by provided &lt;key&gt;.</span>
+    <span class="comment">//Returns a removed value from a Cache, or &lt;nil&gt; if Cache doesn&#39;t contain any value for passed &lt;key&gt;.</span>
+    <span class="comment">//Can return error, e.g. when a remove Cache is unavailable.</span>
+    Remove(key <a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Removes a key-value pair from a remote Cache by provided &lt;key&gt; and &lt;value,</span>
+    <span class="comment">//the removal happens only in case both &lt;key&gt; and &lt;value&gt; matches an existing key-value pair in a remote Cache.</span>
+    <span class="comment">//Returns &lt;true&gt; if the removal was successful, otherwise returns &lt;false&gt;.</span>
+    <span class="comment">//Can return error, e.g. when a remove Cache is unavailable.</span>
+    RemovePair(key <a href="/pkg/builtin/#string">string</a>, value interface{}) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Replaces value in a remote Cache if it exists.</span>
+    <span class="comment">//Returns &lt;true&gt; if the replacement was successful, otherwise returns &lt;false&gt;.</span>
+    <span class="comment">//Can return error, e.g. when a remove Cache is unavailable.</span>
+    ReplaceValue(key <a href="/pkg/builtin/#string">string</a>, oldValue, newValue interface{}) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Replaces value in a remote Cache if it exists with a specific time to live.</span>
+    <span class="comment">//Returns &lt;true&gt; if the replacement was successful, otherwise returns &lt;false&gt;.</span>
+    <span class="comment">//Can return error, e.g. when a remove Cache is unavailable.</span>
+    ReplaceValueExpirable(key <a href="/pkg/builtin/#string">string</a>, oldValue, newValue interface{}, ttl <a href="/pkg/builtin/#int64">int64</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Updates time to live of any value stored in a remote Cache by &lt;key&gt;.</span>
+    <span class="comment">//Returns &lt;true&gt; if update was successful, otherwise returns &lt;false&gt;.</span>
+    <span class="comment">//Can return error, e.g. when a remove Cache is unavailable.</span>
+    UpdateTTL(key <a href="/pkg/builtin/#string">string</a>, ttl <a href="/pkg/builtin/#int64">int64</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Returns size of a remote Cache, the nmber of its key-value pairs at current time.</span>
+    <span class="comment">//Can return error, e.g. when a remove Cache is unavailable.</span>
+    Size() (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)
+}</pre>
+			<p>
+Represents an API for remote Cache instance usage.
+Will be useful on any client side.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewRemoteCache">func <a href="/src/target/remote.go?s=2830:2876#L59">NewRemoteCache</a>
+					<a class="permalink" href="#NewRemoteCache">&#xb6;</a>
+				</h3>
+				<pre>func NewRemoteCache(conn <a href="/pkg/net/">net</a>.<a href="/pkg/net/#Conn">Conn</a>) <a href="#RemoteCache">RemoteCache</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="UserFriendlyCacheCommands">type <a href="/src/target/baseCommands.go?s=7897:7975#L349">UserFriendlyCacheCommands</a>
+				<a class="permalink" href="#UserFriendlyCacheCommands">&#xb6;</a>
+			</h2>
+			<pre>type UserFriendlyCacheCommands struct {
+    <a href="#BaseCacheCommands">BaseCacheCommands</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="UserFriendlyCacheCommands.AppendDictValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=4886:4971#L152">AppendDictValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.AppendDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) AppendDictValue(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.AppendListValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=2921:2998#L88">AppendListValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.AppendListValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) AppendListValue(params []<a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.DeleteDictValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=4473:4565#L140">DeleteDictValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.DeleteDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) DeleteDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.DeleteListValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=3218:3310#L98">DeleteListValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.DeleteListValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) DeleteListValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.GetDictSize">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=5307:5387#L164">GetDictSize</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.GetDictSize">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) GetDictSize(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.GetDictValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=3794:3883#L118">GetDictValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.GetDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) GetDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.GetKeys">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=2228:2309#L66">GetKeys</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.GetKeys">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) GetKeys(params []<a href="/pkg/builtin/#string">string</a>) ([]<a href="/pkg/builtin/#string">string</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.GetListSize">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=3527:3607#L108">GetListSize</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.GetListSize">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) GetListSize(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.GetListValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=2650:2739#L78">GetListValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.GetListValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) GetListValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.GetSize">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=5973:6025#L186">GetSize</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.GetSize">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) GetSize() <a href="/pkg/builtin/#int">int</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.GetValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=263:348#L8">GetValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.GetValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) GetValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.RemoveValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=1608:1702#L50">RemoveValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.RemoveValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) RemoveValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.SetDictValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=4073:4162#L128">SetDictValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.SetDictValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) SetDictValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.SetValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=616:701#L22">SetValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.SetValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) SetValue(params []<a href="/pkg/builtin/#string">string</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.UpdateTTL">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=5579:5658#L174">UpdateTTL</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.UpdateTTL">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) UpdateTTL(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="UserFriendlyCacheCommands.UpdateValue">func (*UserFriendlyCacheCommands) <a href="/src/target/userCommands.go?s=1083:1164#L36">UpdateValue</a>
+					<a class="permalink" href="#UserFriendlyCacheCommands.UpdateValue">&#xb6;</a>
+				</h3>
+				<pre>func (this *<a href="#UserFriendlyCacheCommands">UserFriendlyCacheCommands</a>) UpdateValue(params []<a href="/pkg/builtin/#string">string</a>) (<a href="/pkg/builtin/#bool">bool</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+

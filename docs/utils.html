@@ -1,0 +1,701 @@
+use 'godoc cmd/TestProject/utils' for documentation on the TestProject/utils command 
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = ;
+	document.CALLGRAPH = ;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "TestProject/utils"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="#CheckPort">func CheckPort(port string) error</a></dd>
+			
+				
+				<dd><a href="#ConvertStrings">func ConvertStrings(strings []string) []interface{}</a></dd>
+			
+				
+				<dd><a href="#Min">func Min(a, b int) int</a></dd>
+			
+			
+				
+				<dd><a href="#ConsoleLogger">type ConsoleLogger</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ConsoleLogger.Log">func (logger ConsoleLogger) Log(any ...interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ConsoleLogger.Logf">func (logger ConsoleLogger) Logf(str string, params ...interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#ConsoleLogger.Logln">func (logger ConsoleLogger) Logln(any ...interface{})</a></dd>
+				
+			
+				
+				<dd><a href="#Dict">type Dict</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewDict">func NewDict() Dict</a></dd>
+				
+				
+			
+				
+				<dd><a href="#List">type List</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewEmptySyncList">func NewEmptySyncList() List</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewSyncList">func NewSyncList(values ...interface{}) List</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Logger">type Logger</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewConsoleLogger">func NewConsoleLogger() Logger</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Reader">type Reader</a></dd>
+				
+				
+			
+				
+				<dd><a href="#SyncList">type SyncList</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#SyncList.Append">func (list *SyncList) Append(value interface{}) List</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#SyncList.Get">func (list *SyncList) Get(i int) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#SyncList.Remove">func (list *SyncList) Remove(i int) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#SyncList.Size">func (list *SyncList) Size() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#SyncList.String">func (list *SyncList) String() string</a></dd>
+				
+			
+				
+				<dd><a href="#SyncMap">type SyncMap</a></dd>
+				
+				
+			
+				
+				<dd><a href="#TelnetLogger">type TelnetLogger</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewTelnetLogger">func NewTelnetLogger(conn net.Conn) *TelnetLogger</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#TelnetLogger.Log">func (logger TelnetLogger) Log(any ...interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#TelnetLogger.Logf">func (logger TelnetLogger) Logf(str string, params ...interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#TelnetLogger.Logln">func (logger TelnetLogger) Logln(any ...interface{})</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/TestProject/utils/dict.go">dict.go</a>
+			
+				<a href="/src/TestProject/utils/list.go">list.go</a>
+			
+				<a href="/src/TestProject/utils/logger.go">logger.go</a>
+			
+				<a href="/src/TestProject/utils/map.go">map.go</a>
+			
+				<a href="/src/TestProject/utils/utils.go">utils.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+		
+			
+			
+			<h2 id="CheckPort">func <a href="/src/target/utils.go?s=282:315#L12">CheckPort</a>
+				<a class="permalink" href="#CheckPort">&#xb6;</a>
+			</h2>
+			<pre>func CheckPort(port <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a></pre>
+			<p>
+Checks if the provided string is a port.
+Returns an error if it&#39;s not.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ConvertStrings">func <a href="/src/target/logger.go?s=1561:1612#L62">ConvertStrings</a>
+				<a class="permalink" href="#ConvertStrings">&#xb6;</a>
+			</h2>
+			<pre>func ConvertStrings(strings []<a href="/pkg/builtin/#string">string</a>) []interface{}</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="Min">func <a href="/src/target/utils.go?s=132:154#L2">Min</a>
+				<a class="permalink" href="#Min">&#xb6;</a>
+			</h2>
+			<pre>func Min(a, b <a href="/pkg/builtin/#int">int</a>) <a href="/pkg/builtin/#int">int</a></pre>
+			<p>
+Returns minimal integer value.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="ConsoleLogger">type <a href="/src/target/logger.go?s=484:511#L12">ConsoleLogger</a>
+				<a class="permalink" href="#ConsoleLogger">&#xb6;</a>
+			</h2>
+			<pre>type ConsoleLogger struct{}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ConsoleLogger.Log">func (ConsoleLogger) <a href="/src/target/logger.go?s=689:740#L23">Log</a>
+					<a class="permalink" href="#ConsoleLogger.Log">&#xb6;</a>
+				</h3>
+				<pre>func (logger <a href="#ConsoleLogger">ConsoleLogger</a>) Log(any ...interface{})</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ConsoleLogger.Logf">func (ConsoleLogger) <a href="/src/target/logger.go?s=576:643#L18">Logf</a>
+					<a class="permalink" href="#ConsoleLogger.Logf">&#xb6;</a>
+				</h3>
+				<pre>func (logger <a href="#ConsoleLogger">ConsoleLogger</a>) Logf(str <a href="/pkg/builtin/#string">string</a>, params ...interface{})</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ConsoleLogger.Logln">func (ConsoleLogger) <a href="/src/target/logger.go?s=764:817#L27">Logln</a>
+					<a class="permalink" href="#ConsoleLogger.Logln">&#xb6;</a>
+				</h3>
+				<pre>func (logger <a href="#ConsoleLogger">ConsoleLogger</a>) Logln(any ...interface{})</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Dict">type <a href="/src/target/dict.go?s=90:205#L1">Dict</a>
+				<a class="permalink" href="#Dict">&#xb6;</a>
+			</h2>
+			<pre>type Dict interface {
+    <a href="#SyncMap">SyncMap</a>
+    <span class="comment">//Represents a dictionary as a one string value where necessary.</span>
+    String() <a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+Represents a dictionary interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewDict">func <a href="/src/target/dict.go?s=366:385#L13">NewDict</a>
+					<a class="permalink" href="#NewDict">&#xb6;</a>
+				</h3>
+				<pre>func NewDict() <a href="#Dict">Dict</a></pre>
+				<p>
+Creates a new instance of dictionary
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="List">type <a href="/src/target/list.go?s=81:631#L1">List</a>
+				<a class="permalink" href="#List">&#xb6;</a>
+			</h2>
+			<pre>type List interface {
+    <span class="comment">//Returns a value from a list by provided index, or error if the index is invalid.</span>
+    Get(i <a href="/pkg/builtin/#int">int</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Removes a value from a list by provided index.</span>
+    <span class="comment">//Returns removed value, or error if the index is invalid.</span>
+    Remove(i <a href="/pkg/builtin/#int">int</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)
+
+    <span class="comment">//Appends a new value to a list.</span>
+    <span class="comment">//Returns the same list for a comfortabl usage.</span>
+    Append(value interface{}) <a href="#List">List</a>
+
+    <span class="comment">//Returns a size of a list, the count of its values.</span>
+    Size() <a href="/pkg/builtin/#int">int</a>
+
+    <span class="comment">//Allows a list to be presented as a string where necessary.</span>
+    String() <a href="/pkg/builtin/#string">string</a>
+}</pre>
+			<p>
+Presents a List interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEmptySyncList">func <a href="/src/target/list.go?s=781:809#L26">NewEmptySyncList</a>
+					<a class="permalink" href="#NewEmptySyncList">&#xb6;</a>
+				</h3>
+				<pre>func NewEmptySyncList() <a href="#List">List</a></pre>
+				<p>
+Creates an empty synchronized list
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewSyncList">func <a href="/src/target/list.go?s=931:975#L33">NewSyncList</a>
+					<a class="permalink" href="#NewSyncList">&#xb6;</a>
+				</h3>
+				<pre>func NewSyncList(values ...interface{}) <a href="#List">List</a></pre>
+				<p>
+Creates synchronized list with populated values
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Logger">type <a href="/src/target/logger.go?s=231:482#L1">Logger</a>
+				<a class="permalink" href="#Logger">&#xb6;</a>
+			</h2>
+			<pre>type Logger interface {
+    <span class="comment">//Formatted log, the same as fmt.Printf().</span>
+    Logf(str <a href="/pkg/builtin/#string">string</a>, params ...interface{})
+
+    <span class="comment">//Log in one line, the same as fmt.Println().</span>
+    Log(any ...interface{})
+
+    <span class="comment">//Log each value into a separate line.</span>
+    Logln(any ...interface{})
+}</pre>
+			<p>
+Represents a logger interface.
+From time to time the logging shoud happen into a different places: console, file, socket connection etc.
+For this purpose the interface was introduced.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewConsoleLogger">func <a href="/src/target/logger.go?s=513:543#L14">NewConsoleLogger</a>
+					<a class="permalink" href="#NewConsoleLogger">&#xb6;</a>
+				</h3>
+				<pre>func NewConsoleLogger() <a href="#Logger">Logger</a></pre>
+				
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Reader">type <a href="/src/target/utils.go?s=38:97#L1">Reader</a>
+				<a class="permalink" href="#Reader">&#xb6;</a>
+			</h2>
+			<pre>type Reader interface {
+    Read(buffer []<a href="/pkg/builtin/#byte">byte</a>) (<a href="/pkg/builtin/#int">int</a>, <a href="/pkg/builtin/#error">error</a>)
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SyncList">type <a href="/src/target/list.go?s=683:742#L20">SyncList</a>
+				<a class="permalink" href="#SyncList">&#xb6;</a>
+			</h2>
+			<pre>type SyncList struct {
+    <a href="/pkg/sync/">sync</a>.<a href="/pkg/sync/#RWMutex">RWMutex</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Synchronized implementation of a List interface
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="SyncList.Append">func (*SyncList) <a href="/src/target/list.go?s=1976:2028#L80">Append</a>
+					<a class="permalink" href="#SyncList.Append">&#xb6;</a>
+				</h3>
+				<pre>func (list *<a href="#SyncList">SyncList</a>) Append(value interface{}) <a href="#List">List</a></pre>
+				<p>
+Appends a passed value to the end of the list.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="SyncList.Get">func (*SyncList) <a href="/src/target/list.go?s=1118:1171#L41">Get</a>
+					<a class="permalink" href="#SyncList.Get">&#xb6;</a>
+				</h3>
+				<pre>func (list *<a href="#SyncList">SyncList</a>) Get(i <a href="/pkg/builtin/#int">int</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Returns a value by passed index.
+Or error, e.g. int case of out of bound
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="SyncList.Remove">func (*SyncList) <a href="/src/target/list.go?s=1400:1456#L54">Remove</a>
+					<a class="permalink" href="#SyncList.Remove">&#xb6;</a>
+				</h3>
+				<pre>func (list *<a href="#SyncList">SyncList</a>) Remove(i <a href="/pkg/builtin/#int">int</a>) (interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Removes a value at passed index.
+Or err, e.g. in case of out of bound
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="SyncList.Size">func (*SyncList) <a href="/src/target/list.go?s=2152:2184#L89">Size</a>
+					<a class="permalink" href="#SyncList.Size">&#xb6;</a>
+				</h3>
+				<pre>func (list *<a href="#SyncList">SyncList</a>) Size() <a href="/pkg/builtin/#int">int</a></pre>
+				<p>
+Returns a size of the list.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="SyncList.String">func (*SyncList) <a href="/src/target/list.go?s=2294:2331#L97">String</a>
+					<a class="permalink" href="#SyncList.String">&#xb6;</a>
+				</h3>
+				<pre>func (list *<a href="#SyncList">SyncList</a>) String() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+Returns string interpretation of the list.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="SyncMap">type <a href="/src/target/map.go?s=67:1771#L1">SyncMap</a>
+				<a class="permalink" href="#SyncMap">&#xb6;</a>
+			</h2>
+			<pre>type SyncMap interface {
+    <span class="comment">//Provides an array of keys that are currently used in a map.</span>
+    GetKeys() []<a href="/pkg/builtin/#string">string</a>
+
+    <span class="comment">//Provides a value that is stored against a passed &lt;key&gt;.</span>
+    <span class="comment">//&lt;nil&gt; can be returned in case of key-value pair is not in a map or value is &lt;nil&gt;.</span>
+    Get(key <a href="/pkg/builtin/#string">string</a>) interface{}
+
+    <span class="comment">//Provides an ability to set up a key-value pair into a map.</span>
+    <span class="comment">//Returns a value that was replaced, if any, otherwise returns &lt;nil&gt;.</span>
+    Put(key <a href="/pkg/builtin/#string">string</a>, value interface{}) interface{}
+
+    <span class="comment">//Puts key-value pair into a map in case of a map doesn&#39;t contain another value for a passed &lt;key&gt;.</span>
+    <span class="comment">//Returns &lt;nil&gt; in case the key-value pair was put into a map,</span>
+    <span class="comment">//otherwise returns an existing value for a passed &lt;key&gt;</span>
+    PutIfAbsent(key <a href="/pkg/builtin/#string">string</a>, value interface{}) interface{}
+
+    <span class="comment">//Replaces an existing value in a map with a passed one.</span>
+    <span class="comment">//Returns replaced value for a passed &lt;key&gt;, or &lt;nil&gt; if a map doesn&#39;t contain any value against a passed &lt;key&gt;.</span>
+    Replace(key <a href="/pkg/builtin/#string">string</a>, value interface{}) interface{}
+
+    <span class="comment">//Replaces an existing value in a map, in case it is the same as passed &lt;oldValue&gt;.</span>
+    <span class="comment">//Returns &lt;true&gt; in case the replacement was successful, otherwise returns &lt;false&gt;.</span>
+    ReplaceValue(key <a href="/pkg/builtin/#string">string</a>, oldValue, newValue interface{}) <a href="/pkg/builtin/#bool">bool</a>
+
+    <span class="comment">//Removes a key-value pair from a map by a passed &lt;key&gt;.</span>
+    <span class="comment">//Returns a value that was stored against a passed &lt;key&gt;, or &lt;nil&gt; if there was no such &lt;key&gt;.</span>
+    Remove(key <a href="/pkg/builtin/#string">string</a>) interface{}
+
+    <span class="comment">//Removes a key-value pair from a map in case both &lt;key&gt; and &lt;value&gt; are the same as a map contains currently.</span>
+    <span class="comment">//Returns &lt;true&gt; in case of removing was successful, otherwise return &lt;false&gt;.</span>
+    RemovePair(key <a href="/pkg/builtin/#string">string</a>, value interface{}) <a href="/pkg/builtin/#bool">bool</a>
+
+    <span class="comment">//Returns a size of a map, the count of key-value pairs.</span>
+    Size() <a href="/pkg/builtin/#int">int</a>
+}</pre>
+			<p>
+Represents an interface for any synchronized map.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TelnetLogger">type <a href="/src/target/logger.go?s=881:924#L33">TelnetLogger</a>
+				<a class="permalink" href="#TelnetLogger">&#xb6;</a>
+			</h2>
+			<pre>type TelnetLogger struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewTelnetLogger">func <a href="/src/target/logger.go?s=926:975#L37">NewTelnetLogger</a>
+					<a class="permalink" href="#NewTelnetLogger">&#xb6;</a>
+				</h3>
+				<pre>func NewTelnetLogger(conn <a href="/pkg/net/">net</a>.<a href="/pkg/net/#Conn">Conn</a>) *<a href="#TelnetLogger">TelnetLogger</a></pre>
+				
+				
+				
+			
+
+			
+				
+				<h3 id="TelnetLogger.Log">func (TelnetLogger) <a href="/src/target/logger.go?s=1208:1258#L48">Log</a>
+					<a class="permalink" href="#TelnetLogger.Log">&#xb6;</a>
+				</h3>
+				<pre>func (logger <a href="#TelnetLogger">TelnetLogger</a>) Log(any ...interface{})</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="TelnetLogger.Logf">func (TelnetLogger) <a href="/src/target/logger.go?s=1045:1111#L43">Logf</a>
+					<a class="permalink" href="#TelnetLogger.Logf">&#xb6;</a>
+				</h3>
+				<pre>func (logger <a href="#TelnetLogger">TelnetLogger</a>) Logf(str <a href="/pkg/builtin/#string">string</a>, params ...interface{})</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="TelnetLogger.Logln">func (TelnetLogger) <a href="/src/target/logger.go?s=1383:1435#L55">Logln</a>
+					<a class="permalink" href="#TelnetLogger.Logln">&#xb6;</a>
+				</h3>
+				<pre>func (logger <a href="#TelnetLogger">TelnetLogger</a>) Logln(any ...interface{})</pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
